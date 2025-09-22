@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Exemplo JSON</title>
+</head>
+<body>
+  <h1>Teste JSON</h1>
+  <div id="resultado"></div>
+
+  <script>
+    fetch('mock.json') // caminho do seu arquivo
+      .then(response => response.json())
+      .then(dados => {
+        console.log(dados);
+        document.getElementById("resultado").innerText = dados.nome; 
+      })
+      .catch(erro => console.error("Erro ao carregar JSON:", erro));
+  </script>
+</body>
+</html>
